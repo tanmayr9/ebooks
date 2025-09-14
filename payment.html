@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .payment-card {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      background-color: #fff;
+      text-align: center;
+    }
+    .qr-code {
+      width: 250px;
+      margin: 20px 0;
+    }
+    #screenshotPreview {
+      max-width: 100%;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="payment-card">
+  <h3 class="mb-4">Scan QR to Pay</h3>
+
+  <!-- QR Code -->
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=YourPaymentLinkHere" 
+       alt="QR Code" class="qr-code img-fluid">
+
+  <!-- Step 1: Email Form -->
+  <form id="emailForm">
+    <div class="mb-3">
+      <label for="email" class="form-label">Enter your Email ID</label>
+      <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Submit Email</button>
+  </form>
+
+  <!-- Step 2: Payment Screenshot Form -->
+  <form id="paymentForm" class="mt-4 d-none">
+    <div class="mb-3">
+      <label for="paymentScreenshot" class="form-label">Upload Payment Screenshot</label>
+      <input class="form-control" type="file" id="paymentScreenshot" accept="image/*" required>
+      <img id="screenshotPreview" class="d-none" alt="Screenshot Preview">
+    </div>
+    <button type="submit" class="btn btn-success w-100">Submit Payment</button>
+  </form>
+
+  <!-- Confirmation Message -->
+  <div id="confirmation" class="alert mt-4 d-none" role="alert"></div>
+</div>
+
+<script>
+const emailForm = document.getElementById('emailForm');
+const paymentForm = document.getElementById('paymentForm');
+const emailInput = document.getElementById('email');
+const confirmation = document.getElementById('confirmation');
+const fileInput = document.getElementById('paymentScreenshot');
+const screenshotPreview = document.getElementById('screenshotPreview');
+
+let userEmail = '';
+
+// Step 1: Collect Email
+emailForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  userEmail = emailInput.value.trim();
+
+  if(userEmail){
+    emailForm.classList.add('d-none');
+    paymentForm.classList.remove('d-none');
+
+    confirmation.textContent = `We have received your email: ${userEmail}. Please upload your payment screenshot.`;
+    confirmation.classList.remove('d-none');
+    confirmation.classList.replace('alert-success','alert-info');
+  }
+});
+
+// Preview uploaded screenshot
+fileInput.addEventListener('change', function() {
+  const file = this.files[0];
+  if(file){
+    screenshotPreview.src = URL.createObjectURL(file);
+    screenshotPreview.classList.remove('d-none');
+  }
+});
+
+// Step 2: Upload Payment Screenshot and send to backend
+paymentForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  if(!fileInput.files[0]){
+    alert("Please select a screenshot to upload!");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append('email', userEmail);
+  formData.append('screenshot', fileInput.files[0]);
+
+  fetch('http://localhost:3000/submit-payment', {
+    method: 'POST',
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    confirmation.textContent = `We have received your payment! A delivery link will be sent to ${userEmail} soon. Redirecting to Home page...`;
+    confirmation.classList.replace('alert-info','alert-success');
+
+    paymentForm.querySelector('button').disabled = true;
+    fileInput.disabled = true;
+
+    // Redirect to Home page after 5 seconds
+    setTimeout(() => {
+      window.location.href = '/index.html';
+     // <-- replace with your Home page file
+    }, 1000);
+  })
+  .catch(err => {
+    confirmation.textContent = `Something went wrong. Please try again.`;
+    confirmation.classList.replace('alert-info','alert-danger');
+    console.error(err);
+  });
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

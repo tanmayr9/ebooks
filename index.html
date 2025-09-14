@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Bootstrap Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
+    >
+      <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand fw-bold text-primary" href="#">
+          <i class="bi bi-book-half"></i> E-Book Store
+        </a>
+
+        <!-- Toggler for mobile -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item mx-3">
+              <a class="nav-link active fw-semibold" href="#">Home</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link fw-semibold" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link fw-semibold" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+
+          <!-- Search bar -->
+          <form class="d-flex me-3">
+            <input
+              class="form-control rounded-pill me-2"
+              type="search"
+              placeholder="Search books..."
+              aria-label="Search"
+            />
+            <button class="btn btn-primary rounded-pill" type="submit">
+              Search
+            </button>
+          </form>
+
+          <!-- Login/Signup Buttons -->
+          <a href="login.html" class="btn btn-outline-primary me-2 rounded-pill"
+            >Login</a
+          >
+          <a href="signup.html" class="btn btn-primary rounded-pill">Sign Up</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="py-5 text-center text-light"
+      style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)"
+    >
+      <div class="container">
+        <h1 class="fw-bold display-4">Welcome to E-Book Store</h1>
+        <p class="lead mb-4">
+          Discover thousands of e-books at your fingertips. Learn, explore, and
+          enjoy reading anywhere.
+        </p>
+        <a href="books.html" class="btn btn-light btn-lg rounded-pill shadow"
+          >Browse Now</a
+        >
+      </div>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <section class="py-5" style="background: #f8f9fa">
+      <div class="container">
+        <h2 class="fw-bold text-center mb-5">📚 Best Sellers</h2>
+        <div class="row gy-4">
+          <!-- Card Example -->
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100 border-0 shadow-lg rounded-4 hover-card">
+              <img
+                src="it ends with us .jpg"
+                class="card-img-top rounded-top-4"
+                alt="Book"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">It Ends With Us</h5>
+                <p class="card-text text-muted small">Colleen Hoover</p>
+                <p class="fw-bold text-primary">₹299</p>
+                <a href="payment.html" class="btn btn-primary rounded-pill w-100"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Repeat similar cards for more books -->
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100 border-0 shadow-lg rounded-4 hover-card">
+              <img
+                src="it ends with us .jpg"
+                class="card-img-top rounded-top-4"
+                alt="Book"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Book Title</h5>
+                <p class="card-text text-muted small">Author Name</p>
+                <p class="fw-bold text-primary">₹399</p>
+                <a href="payment.html" class="btn btn-primary rounded-pill w-100"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100 border-0 shadow-lg rounded-4 hover-card">
+              <img
+                src="it ends with us .jpg"
+                class="card-img-top rounded-top-4"
+                alt="Book"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Book Title</h5>
+                <p class="card-text text-muted small">Author Name</p>
+                <p class="fw-bold text-primary">₹399</p>
+                <a href="payment.html" class="btn btn-primary rounded-pill w-100"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100 border-0 shadow-lg rounded-4 hover-card">
+              <img
+                src="it ends with us .jpg"
+                class="card-img-top rounded-top-4"
+                alt="Book"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Book Title</h5>
+                <p class="card-text text-muted small">Author Name</p>
+                <p class="fw-bold text-primary">₹399</p>
+                <a href="payment.html" class="btn btn-primary rounded-pill w-100"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section
+      class="py-5 text-light"
+      style="background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%)"
+    >
+      <div class="container">
+        <h2 class="fw-bold text-center mb-5">📖 Explore by Category</h2>
+        <div class="row text-center gy-4">
+          <div class="col-md-3">
+            <div class="p-4 bg-dark bg-opacity-25 rounded-4 shadow-lg">
+              <i class="bi bi-heart-fill fs-1 text-warning"></i>
+              <h6 class="mt-3">Romance</h6>
+              <a href="romance.html" class="btn btn-primary rounded-pill w-100">Explore</a>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="p-4 bg-dark bg-opacity-25 rounded-4 shadow-lg">
+              <i class="bi bi-lightbulb-fill fs-1 text-info"></i>
+              <h6 class="mt-3">Self-Help</h6>
+              <a href="self-help.html" class="btn btn-primary rounded-pill w-100">Explore</a>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="p-4 bg-dark bg-opacity-25 rounded-4 shadow-lg">
+              <i class="bi bi-book-fill fs-1 text-success"></i>
+              <h6 class="mt-3">Fiction</h6>
+              <a href="fiction.html" class="btn btn-primary rounded-pill w-100">Explore</a>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="p-4 bg-dark bg-opacity-25 rounded-4 shadow-lg">
+              <i class="bi bi-mortarboard-fill fs-1 text-danger"></i>
+              <h6 class="mt-3">Education</h6>
+              <a href="education.html" class="btn btn-primary rounded-pill w-100">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hover effect style -->
+    <style>
+      .hover-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .hover-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+
+    <!-- Add Bootstrap Icons CDN for book icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Futuristic Footer -->
+    <footer
+      class="text-light pt-5"
+      style="background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77)"
+    >
+      <div class="container">
+        <div class="row">
+          <!-- Brand Section -->
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold text-uppercase">
+              <i class="bi bi-book-half text-primary"></i> E-Book Store
+            </h5>
+            <p class="small text-muted">
+              Discover, Read, and Grow with our vast collection of e-books
+              across genres.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-3 mb-4">
+            <h6 class="fw-bold text-uppercase mb-3">Quick Links</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-decoration-none text-light-50">Home</a>
+              </li>
+              <li>
+                <a href="about.html" class="text-decoration-none text-light-50"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-decoration-none text-light-50"
+                  >Categories</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-decoration-none text-light-50"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-md-3 mb-4">
+            <h6 class="fw-bold text-uppercase mb-3">Contact</h6>
+            <p class="small">
+              <i class="bi bi-geo-alt-fill text-primary"></i> New Delhi, India
+            </p>
+            <p class="small">
+              <i class="bi bi-envelope-fill text-primary"></i>
+              support@ebookstore.com
+            </p>
+            <p class="small">
+              <i class="bi bi-telephone-fill text-primary"></i> +91 98765 43210
+            </p>
+          </div>
+
+          <!-- Social Media -->
+          <div class="col-md-3 mb-4">
+            <h6 class="fw-bold text-uppercase mb-3">Follow Us</h6>
+            <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"
+              ><i class="bi bi-twitter"></i
+            ></a>
+            <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" class="btn btn-outline-light btn-sm rounded-circle"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="border-secondary" />
+
+        <!-- Copyright -->
+        <div class="row">
+          <div class="col text-center">
+            <p class="small mb-0 text-muted">
+              &copy; 2025 E-Book Store | All Rights Reserved | Jugaadu.bhai
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap Icons CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
